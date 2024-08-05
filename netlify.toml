@@ -1,6 +1,6 @@
 [build]
-  publish = "dist/2-invoice-app"  # Directorio que contiene los archivos construidos de la aplicación
-  command = "ng build"  # Comando para construir la aplicación
+  publish = "dist/2-invoice-app"  # Directorio relativo de publicación
+  command = "npm run build"       # Comando de construcción
 
 [build.environment]
   NODE_VERSION = "18"
@@ -12,3 +12,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
