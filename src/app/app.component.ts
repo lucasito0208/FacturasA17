@@ -7,8 +7,7 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule, InvoiceComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = '2-invoice-app';
