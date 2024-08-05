@@ -1,0 +1,74 @@
+<form class="w-50" (ngSubmit)="onSubmit(itemForm)" #itemForm="ngForm">
+    <input 
+        name="product"
+        placeholder="producto"
+        class="form-control m-3"
+        [(ngModel)]="item.product"
+        required
+        minlength="5"
+        #product="ngModel"/>
+
+        @if (product.invalid && (product.dirty || product.touched)) {
+            @if (product.errors!['required']) {
+                <div class="text-danger mx-3">
+                    Nombre del producto es necesario!
+                </div>
+            }
+
+            @if (product.errors!['minlength']) {
+                <div class="text-danger">
+                    El nombre del producto debe tener al menos 5 caracteres!
+                </div>
+            }
+        }
+
+        <input 
+        name="price"
+        type="number"
+        placeholder="precio"
+        class="form-control m-3"
+        [(ngModel)]="item.price"
+        required
+        min="10"
+        #price="ngModel"
+        />
+
+        @if (price.invalid && (price.dirty || price.touched)) {
+            @if (price.errors!['required']) {
+                <div class="text-danger mx-3">
+                    El precio del producto es necesario!
+                </div>
+            }
+
+            @if (price.errors!['minlength']) {
+                <div class="text-danger">
+                    El precio debe ser no menor a 10
+                </div>
+            }
+        }
+
+
+        <input 
+        name="quantity"
+        type="number"
+        placeholder="cantidad"
+        class="form-control m-3"
+        [(ngModel)]="item.quantity"
+        required
+        min="1"
+        #quantity="ngModel"
+        />
+
+        @if (quantity.invalid && (quantity.dirty || quantity.touched)) {
+            @if (quantity.errors!['requiered']) {
+                <div class="text-danger mx-3">
+                    La cantidad de los productos no puede ser nula
+                </div>
+            }
+        }
+
+        <button class="btn btn-primary m-3" [disabled]="itemForm.invalid">
+            Nuevo Producto!
+        </button>
+</form>
+
