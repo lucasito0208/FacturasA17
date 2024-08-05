@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/2-invoice-app/browser"  # Directorio correcto de publicación
+  publish = "dist/2-invoice-app"  # Directorio correcto de publicación
   command = "npm run build"  # Comando para construir tu aplicación
 
 [build.environment]
